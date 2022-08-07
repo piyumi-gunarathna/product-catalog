@@ -6,6 +6,7 @@ namespace ProductCatalog.Domain
     {
         IEnumerable<Product> Get();
         Product Create(Product product);
+        int GetByName(string name);
     }
 }
 

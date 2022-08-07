@@ -11,17 +11,17 @@ namespace ProductCatalog.Api.RequestHandlers
         {
             _productRepository = productRepository;
         }
+
         public IEnumerable<ProductResponse> Handle()
         {
-            var Products = _productRepository.Get().Select(s => new ProductResponse
+            var products = _productRepository.Get().Select(s => new ProductResponse
             {
                 Name = s.Name,
                 Description = s.Description,
                 Price = s.Price,
                 CategoryId = s.CategoryId
             });
-            return Products;
-
+            return products;
         }
     }
 }

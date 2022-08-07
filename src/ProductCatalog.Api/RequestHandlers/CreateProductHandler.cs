@@ -5,22 +5,20 @@ namespace ProductCatalog.Api.RequestHandlers
 {
     public class CreateProductHandler
     {
-        private readonly IProductRepository _productRepository;
+        private readonly ProductService _productService;
 
-        public CreateProductHandler(IProductRepository productRepository)
+        public CreateProductHandler(ProductService productService)
         {
-            _productRepository = productRepository;
+            _productService = productService;
         }
+
         public ProductResponse Handle(ProductRequest request)
         {
-            var product = new Product(
+            var product = _productService.CreateProduct(
                 request.Name,
                 request.Description,
                 request.Price,
-                request.CategoryId
-                );
-
-            _productRepository.Create(product);
+                request.CategoryId);
             return new ProductResponse();
         }
     }

@@ -43,6 +43,17 @@ namespace ProductCatalog.Infrastructure.Data
 
             return products;
         }
+
+        public int GetByName(string name)
+        {
+            _dbContext.Database.EnsureCreated();
+
+            var productId = _dbContext.Product
+                .Where(s => s.Name.ToLower().Equals(name.ToLower()))
+                .Select(s => s.Id).FirstOrDefault();
+
+            return productId;
+        }
     }
 }
 

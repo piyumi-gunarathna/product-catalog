@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<CreateProductHandler>();
 builder.Services.AddTransient<GetProductsHandler>();
+builder.Services.AddTransient<ProductService>();
 
 var connectionString = Environment.GetEnvironmentVariable("ProductCatalogConnection");
 if (string.IsNullOrWhiteSpace(connectionString))
