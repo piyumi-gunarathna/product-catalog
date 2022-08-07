@@ -2,7 +2,7 @@
 {
     public class Product
     {
-        public Product(string name, string description, decimal price, Category category)
+        public Product(string name, string description, decimal price, int categoryId)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -16,21 +16,21 @@
             {
                 throw new ProductCatalogException("Price should be greater than 0");
             }
-            if (category == null)
+            if (categoryId <= 0 )
             {
-                throw new ProductCatalogException("Category cannot be null.");
+                throw new ProductCatalogException("Category id has to positive");
             }
 
             Name = name;
             Description = description;
             Price = price;
-            Category = category;
+            CategoryId = categoryId;
         }
 
         public int Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; private set; }
-        public Category Category { get; private set; }
+        public int CategoryId { get; private set; }
     }
 }

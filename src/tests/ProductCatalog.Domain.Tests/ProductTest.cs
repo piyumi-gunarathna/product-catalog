@@ -1,5 +1,4 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
 namespace ProductCatalog.Domain.Tests
 {
@@ -16,7 +15,7 @@ namespace ProductCatalog.Domain.Tests
                     "",
                     "Neclace",
                     2500,
-                    new Category("Jewellery", "Jewellery")
+                    1
                 ));
         }
 
@@ -27,7 +26,7 @@ namespace ProductCatalog.Domain.Tests
                     " ",
                     "Neclace",
                     2500,
-                    new Category("Jewellery", "Jewellery")
+                    1
                 ));
         }
 
@@ -38,7 +37,7 @@ namespace ProductCatalog.Domain.Tests
                     "Neclace",
                     "",
                     2500,
-                    new Category("Jewellery", "Jewellery")
+                    1
                 ));
         }
 
@@ -49,7 +48,7 @@ namespace ProductCatalog.Domain.Tests
                     "Neclace",
                     " ",
                     2500,
-                    new Category("Jewellery", "Jewellery")
+                    1
                 ));
         }
 
@@ -60,7 +59,7 @@ namespace ProductCatalog.Domain.Tests
                     "Neclace",
                     "Neclace with pearls ",
                     0,
-                    new Category("Jewellery", "Jewellery")
+                    1
                 ));
         }
 
@@ -71,7 +70,7 @@ namespace ProductCatalog.Domain.Tests
                 "Neclace",
                  "Neclace with pearls ",
                  2500,
-                 new Category("Jewellery", "Jewellery"));
+                 1);
             Assert.NotNull(obj);
 
         }
