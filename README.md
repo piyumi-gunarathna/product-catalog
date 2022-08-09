@@ -1,7 +1,6 @@
-# product-catalog
-Product Catalog
+# Product Catalog
 
-## prerequisites
+## Prerequisites
 * Api: VS 2022, dotnet core 6
 * Web App: VS Code, angular 14.
 * DB: Postgres
