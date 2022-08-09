@@ -1,0 +1,36 @@
+<div class="container">
+    <h3>Product </h3>
+
+    <form [formGroup]="productForm" (ngSubmit)="createProduct()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Product name" required>
+            <span class="text-danger" *ngIf="productForm.controls.name.invalid && productForm.controls.name.touched"> Name is required</span>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" formControlName="description" rows="3" required></textarea>
+            <span class="text-danger" class="text-danger" *ngIf="productForm.controls.description.invalid && productForm.controls.description.touched"> Description is required</span>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" aria-label="Category" formControlName="category" required>
+                <option value="0">Select Category</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <span class="text-danger" *ngIf="productForm.controls.category.invalid && productForm.controls.category.touched"> Category is required</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Price</label>
+            <input type="number" class="form-control" formControlName="price" placeholder="Product price" required>
+            <span *ngIf="productForm.controls.price.invalid && productForm.controls.price.touched"> Price is required</span>
+        </div>
+        <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary"> Create</button>
+    </form>
+
+
+
+</div>
