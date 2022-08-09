@@ -11,7 +11,7 @@ import { map } from 'rxjs';
 export class ProductService {
 
   //private productApiUrl: string = config.ProductApiUrl;
-  private productApiUrl: string = "https://localhost:7144/api/";
+  private productApiUrl: string = "http://localhost:7144/api/";
 
   private httpOptions = {
     headers: new HttpHeaders({

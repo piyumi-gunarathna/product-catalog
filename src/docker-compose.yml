@@ -18,3 +18,24 @@ services:
             - "8080:8080"
         depends_on:
             - "db"
+
+    api:
+        build:
+            context: .
+            dockerfile: ProductCatalog.Api/Dockerfile
+        restart: always
+        ports:
+            - "7144:80"
+        environment:
+            - ProductCatalogConnection=Host=db;Database=ProductCatalog;Username=productcatalog;Password=productcatalog
+        depends_on:
+            - "db"
+    web:
+        build:
+            context: .
+            dockerfile: ProductCatalog.Web/Dockerfile
+        restart: always
+        ports:
+            - "4200:80"
+        depends_on:
+            - "api"
